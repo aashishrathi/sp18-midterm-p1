@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.5.0;
 
 import './Queue.sol';
 import './Token.sol';
@@ -10,5 +10,9 @@ import './Token.sol';
  */
 
 contract Crowdsale {
-	// YOUR CODE HERE
+
+
+  construtor() public {
+
+  }
 }

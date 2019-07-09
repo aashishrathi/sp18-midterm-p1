@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.5.0;
 
 /**
  * @title Queue
@@ -19,41 +19,41 @@ contract Queue {
 	// YOUR CODE HERE
 
 	/* Returns the number of people waiting in line */
-	function qsize() constant returns(uint8) {
+	function qsize() view public returns(uint8) {
 		// YOUR CODE HERE
 	}
 
 	/* Returns whether the queue is empty or not */
-	function empty() constant returns(bool) {
+	function empty() view public returns(bool) {
 		// YOUR CODE HERE
 	}
-	
+
 	/* Returns the address of the person in the front of the queue */
-	function getFirst() constant returns(address) {
+	function getFirst() view public returns(address) {
 		// YOUR CODE HERE
 	}
-	
+
 	/* Allows `msg.sender` to check their position in the queue */
-	function checkPlace() constant returns(uint8) {
+	function checkPlace() view public returns(uint8) {
 		// YOUR CODE HERE
 	}
-	
+
 	/* Allows anyone to expel the first person in line if their time
 	 * limit is up
 	 */
-	function checkTime() {
+	function checkTime() public {
 		// YOUR CODE HERE
 	}
-	
+
 	/* Removes the first person in line; either when their time is up or when
 	 * they are done with their purchase
 	 */
-	function dequeue() {
+	function dequeue() public {
 		// YOUR CODE HERE
 	}
 
 	/* Places `addr` in the first empty position in the queue */
-	function enqueue(address addr) {
+	function enqueue(address addr) public {
 		// YOUR CODE HERE
 	}
 }

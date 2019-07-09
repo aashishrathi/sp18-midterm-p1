@@ -1,0 +1,150 @@
+{
+  "contractName": "Crowdsale",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Contract that deploys `Token.sol` Is timelocked, manages buyer queue, updates balances on `Token.sol`\",\"methods\":{},\"title\":\"Crowdsale\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Crowdsale.sol\":\"Crowdsale\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Crowdsale.sol\":{\"keccak256\":\"0x4ba9acc2fb612e9ab5da8fcca337754f9a695051c8982fad73dd13a5a659b46c\",\"urls\":[\"bzzr://6819e9fa9c04771ea9ae94ae7a42226b68161adbc62b7fd362a47469b0e5a8f2\"]},\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol\":{\"keccak256\":\"0x3bb7900862c4f895c5941993afdde4e9f85b5a02e4c43225e19dba99a77bf68a\",\"urls\":[\"bzzr://a8d363a32836fb0e38225e77443593ac0f169a58a2c39a36879dc7d8164a2e42\"]},\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Token.sol\":{\"keccak256\":\"0xc316a04e04106e2a8907ae031d96acc7851f9173c7e7d264f029fc85fb427ee5\",\"urls\":[\"bzzr://5433a85f8fdb2d353c66fa1d57acf83ecb972cfa911bd8e69d2bdc9e4e8a1b19\"]},\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/interfaces/ERC20Interface.sol\":{\"keccak256\":\"0xd26d40cf16c64b750763bb66a85dbdf72990a27a7c519d79afbdce750d18a81b\",\"urls\":[\"bzzr://6190f827b8846c689cb8cec376a90dda6e745e36a168de9d3fff890adcd15e3c\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a7230582049304f93ab1e0e556c9e6b9260a4405e112cb22ba2059e3c2a4c6ab1716e718d0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a7230582049304f93ab1e0e556c9e6b9260a4405e112cb22ba2059e3c2a4c6ab1716e718d0029",
+  "sourceMap": "212:41:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;212:41:0;;;;;;;",
+  "deployedSourceMap": "212:41:0:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\n\nimport './Queue.sol';\nimport './Token.sol';\n\n/**\n * @title Crowdsale\n * @dev Contract that deploys `Token.sol`\n * Is timelocked, manages buyer queue, updates balances on `Token.sol`\n */\n\ncontract Crowdsale {\n\t// YOUR CODE HERE\n}\n",
+  "sourcePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Crowdsale.sol",
+  "ast": {
+    "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Crowdsale.sol",
+    "exportedSymbols": {
+      "Crowdsale": [
+        4
+      ]
+    },
+    "id": 5,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol",
+        "file": "./Queue.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 5,
+        "sourceUnit": 106,
+        "src": "25:21:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Token.sol",
+        "file": "./Token.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 5,
+        "sourceUnit": 112,
+        "src": "47:21:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Crowdsale\n@dev Contract that deploys `Token.sol`\nIs timelocked, manages buyer queue, updates balances on `Token.sol`",
+        "fullyImplemented": true,
+        "id": 4,
+        "linearizedBaseContracts": [
+          4
+        ],
+        "name": "Crowdsale",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 5,
+        "src": "212:41:0"
+      }
+    ],
+    "src": "0:254:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Crowdsale.sol",
+    "exportedSymbols": {
+      "Crowdsale": [
+        4
+      ]
+    },
+    "id": 5,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol",
+        "file": "./Queue.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 5,
+        "sourceUnit": 106,
+        "src": "25:21:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Token.sol",
+        "file": "./Token.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 5,
+        "sourceUnit": 112,
+        "src": "47:21:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Crowdsale\n@dev Contract that deploys `Token.sol`\nIs timelocked, manages buyer queue, updates balances on `Token.sol`",
+        "fullyImplemented": true,
+        "id": 4,
+        "linearizedBaseContracts": [
+          4
+        ],
+        "name": "Crowdsale",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 5,
+        "src": "212:41:0"
+      }
+    ],
+    "src": "0:254:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.6",
+  "updatedAt": "2019-07-09T13:13:08.647Z",
+  "devdoc": {
+    "details": "Contract that deploys `Token.sol` Is timelocked, manages buyer queue, updates balances on `Token.sol`",
+    "methods": {},
+    "title": "Crowdsale"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

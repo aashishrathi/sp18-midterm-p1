@@ -5,7 +5,7 @@ const Crowdsale = artifacts.require("./Crowdsale.sol");
 // YOUR CODE HERE
 
 contract('testTemplate', function(accounts) {
-	/* Define your constant variables and instantiate constantly changing 
+	/* Define your view variables and instantiate viewly changing 
 	 * ones
 	 */
 	const args = {};
