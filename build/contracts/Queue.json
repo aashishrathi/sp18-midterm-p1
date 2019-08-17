@@ -3,6 +3,46 @@
   "abi": [
     {
       "constant": true,
+      "inputs": [
+        {
+          "name": "_timeLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "qsize",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "ejectedBuyerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TimeUp",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "event",
+      "anonymous": false
+    },
+    {
+      "constant": true,
       "inputs": [],
       "name": "qsize",
       "outputs": [
@@ -59,7 +99,12 @@
     },
     {
       "constant": false,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
       "name": "checkTime",
       "outputs": [],
       "payable": false,
@@ -90,25 +135,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getFirst\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"qsize\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"enqueue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"dequeue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"checkPlace\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"checkTime\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"empty\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Data structure contract used in `Crowdsale.sol` Allows buyers to line up on a first-in-first-out basis See this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html\",\"methods\":{},\"title\":\"Queue\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol\":\"Queue\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol\":{\"keccak256\":\"0x3bb7900862c4f895c5941993afdde4e9f85b5a02e4c43225e19dba99a77bf68a\",\"urls\":[\"bzzr://a8d363a32836fb0e38225e77443593ac0f169a58a2c39a36879dc7d8164a2e42\"]}},\"version\":1}",
-  "bytecode": "0x608060405260056000806101000a81548160ff021916908360ff16021790555034801561002b57600080fd5b506102368061003b6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e223143146100885780633e3c9eae146100df5780638f807f6b14610110578063957908d114610161578063ad7d59fc14610178578063e0c6190d146101a9578063f2a75fe4146101c0575b600080fd5b34801561009457600080fd5b5061009d6101ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f46101f4565b604051808260ff1660ff16815260200191505060405180910390f35b34801561011c57600080fd5b5061015f6004803603602081101561013357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f9565b005b34801561016d57600080fd5b506101766101fc565b005b34801561018457600080fd5b5061018d6101fe565b604051808260ff1660ff16815260200191505060405180910390f35b3480156101b557600080fd5b506101be610203565b005b3480156101cc57600080fd5b506101d5610205565b604051808215151515815260200191505060405180910390f35b600090565b600090565b50565b565b600090565b565b60009056fea165627a7a72305820b82b4cf6c7ced8be7a4858929d6c7237e5fc50f604e478856dd888a20e461a230029",
-  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e223143146100885780633e3c9eae146100df5780638f807f6b14610110578063957908d114610161578063ad7d59fc14610178578063e0c6190d146101a9578063f2a75fe4146101c0575b600080fd5b34801561009457600080fd5b5061009d6101ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f46101f4565b604051808260ff1660ff16815260200191505060405180910390f35b34801561011c57600080fd5b5061015f6004803603602081101561013357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f9565b005b34801561016d57600080fd5b506101766101fc565b005b34801561018457600080fd5b5061018d6101fe565b604051808260ff1660ff16815260200191505060405180910390f35b3480156101b557600080fd5b506101be610203565b005b3480156101cc57600080fd5b506101d5610205565b604051808215151515815260200191505060405180910390f35b600090565b600090565b50565b565b600090565b565b60009056fea165627a7a72305820b82b4cf6c7ced8be7a4858929d6c7237e5fc50f604e478856dd888a20e461a230029",
-  "sourceMap": "280:1123:2:-;;;334:1;321:14;;;;;;;;;;;;;;;;;;;;280:1123;8:9:-1;5:2;;;30:1;27;20:12;5:2;280:1123:2;;;;;;;",
-  "deployedSourceMap": "280:1123:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;748:73;;8:9:-1;5:2;;;30:1;27;20:12;5:2;748:73:2;;;;;;;;;;;;;;;;;;;;;;;;;;;491:68;;8:9:-1;5:2;;;30:1;27;20:12;5:2;491:68:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1339:62;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1339:62:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1339:62:2;;;;;;;;;;;;;;;;;;;;;;1224:50;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1224:50:2;;;;;;888:73;;8:9:-1;5:2;;;30:1;27;20:12;5:2;888:73:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1051:52;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1051:52:2;;;;;;611:67;;8:9:-1;5:2;;;30:1;27;20:12;5:2;611:67:2;;;;;;;;;;;;;;;;;;;;;;;;;;;748:73;788:7;748:73;:::o;491:68::-;528:5;491:68;:::o;1339:62::-;;:::o;1224:50::-;:::o;888:73::-;930:5;888:73;:::o;1051:52::-;:::o;611:67::-;648:4;611:67;:::o",
-  "source": "pragma solidity ^0.5.0;\n\n/**\n * @title Queue\n * @dev Data structure contract used in `Crowdsale.sol`\n * Allows buyers to line up on a first-in-first-out basis\n * See this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html\n */\n\ncontract Queue {\n\t/* State variables */\n\tuint8 size = 5;\n\t// YOUR CODE HERE\n\n\t/* Add events */\n\t// YOUR CODE HERE\n\n\t/* Add constructor */\n\t// YOUR CODE HERE\n\n\t/* Returns the number of people waiting in line */\n\tfunction qsize() view public returns(uint8) {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Returns whether the queue is empty or not */\n\tfunction empty() view public returns(bool) {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Returns the address of the person in the front of the queue */\n\tfunction getFirst() view public returns(address) {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Allows `msg.sender` to check their position in the queue */\n\tfunction checkPlace() view public returns(uint8) {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Allows anyone to expel the first person in line if their time\n\t * limit is up\n\t */\n\tfunction checkTime() public {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Removes the first person in line; either when their time is up or when\n\t * they are done with their purchase\n\t */\n\tfunction dequeue() public {\n\t\t// YOUR CODE HERE\n\t}\n\n\t/* Places `addr` in the first empty position in the queue */\n\tfunction enqueue(address addr) public {\n\t\t// YOUR CODE HERE\n\t}\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getFirst\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"qsize\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"enqueue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"dequeue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"checkPlace\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"checkTime\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"empty\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_timeLimit\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"ejectedBuyerAddress\",\"type\":\"address\"}],\"name\":\"TimeUp\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol\":\"Queue\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol\":{\"keccak256\":\"0x0562622930fc75e0a7584e751626c2bc69feb2efaefcbe4ffdd5606c45b4b862\",\"urls\":[\"bzzr://942ef175da9ba320b5ba3524d02c661fe0492836949b0334491c26d3409e30ea\"]},\"/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/utils/SafeMath.sol\":{\"keccak256\":\"0x53963d6132d4b631fafd61cb613986ec4bd8f01b72f11764de0db8c1050f52b3\",\"urls\":[\"bzzr://1830f4bb874c966af9387592bd16f000a1b47b4dddd649940fd4e6416baef36a\"]}},\"version\":1}",
+  "bytecode": "0x608060405260056000806101000a81548160ff021916908360ff16021790555034801561002b57600080fd5b5060405160208061063d8339810180604052602081101561004b57600080fd5b8101908080519060200190929190505050806001819055506001600360006101000a81548160ff021916908360ff1602179055506000600360016101000a81548160ff021916908360ff16021790555050610592806100ab6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e223143146100885780633e3c9eae146100df5780638f807f6b14610110578063957908d114610161578063ad7d59fc14610178578063e0c6190d146101a9578063f2a75fe4146101c0575b600080fd5b34801561009457600080fd5b5061009d6101ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f4610242565b604051808260ff1660ff16815260200191505060405180910390f35b34801561011c57600080fd5b5061015f6004803603602081101561013357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061026d565b005b34801561016d57600080fd5b50610176610345565b005b34801561018457600080fd5b5061018d610402565b604051808260ff1660ff16815260200191505060405180910390f35b3480156101b557600080fd5b506101be6104d6565b005b3480156101cc57600080fd5b506101d561051f565b604051808215151515815260200191505060405180910390f35b600060026000600360009054906101000a900460ff1660ff1660ff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60006001600360009054906101000a900460ff16600360019054906101000a900460ff160301905090565b6001600360018282829054906101000a900460ff160192506101000a81548160ff021916908360ff16021790555060408051908101604052808273ffffffffffffffffffffffffffffffffffffffff1681526020014281525060026000600360019054906101000a900460ff1660ff1660ff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015590505050565b600360019054906101000a900460ff1660ff16600360009054906101000a900460ff1660ff161115151561037857600080fd5b60026000600360009054906101000a900460ff1660ff1660ff168152602001908152602001600020600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000905550506001600360008282829054906101000a900460ff160192506101000a81548160ff021916908360ff160217905550565b600080600360009054906101000a900460ff1690505b600360019054906101000a900460ff1660ff168160ff1610156104cd57600260008260ff1660ff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104c2576001600360009054906101000a900460ff168203019150506104d3565b806001019050610418565b50600090505b90565b60015461050e4260026000600360009054906101000a900460ff1660ff1660ff1681526020019081526020016000206001015461054d565b111561051d5761051c610345565b5b565b6000600360009054906101000a900460ff1660ff16600360019054906101000a900460ff1660ff1610905090565b600082821115151561055b57fe5b81830390509291505056fea165627a7a72305820144c3ace3d4519b70dddb583d963ea680a2eb8bb90994fa8986069a75c746b9e0029",
+  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e223143146100885780633e3c9eae146100df5780638f807f6b14610110578063957908d114610161578063ad7d59fc14610178578063e0c6190d146101a9578063f2a75fe4146101c0575b600080fd5b34801561009457600080fd5b5061009d6101ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f4610242565b604051808260ff1660ff16815260200191505060405180910390f35b34801561011c57600080fd5b5061015f6004803603602081101561013357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061026d565b005b34801561016d57600080fd5b50610176610345565b005b34801561018457600080fd5b5061018d610402565b604051808260ff1660ff16815260200191505060405180910390f35b3480156101b557600080fd5b506101be6104d6565b005b3480156101cc57600080fd5b506101d561051f565b604051808215151515815260200191505060405180910390f35b600060026000600360009054906101000a900460ff1660ff1660ff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60006001600360009054906101000a900460ff16600360019054906101000a900460ff160301905090565b6001600360018282829054906101000a900460ff160192506101000a81548160ff021916908360ff16021790555060408051908101604052808273ffffffffffffffffffffffffffffffffffffffff1681526020014281525060026000600360019054906101000a900460ff1660ff1660ff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015590505050565b600360019054906101000a900460ff1660ff16600360009054906101000a900460ff1660ff161115151561037857600080fd5b60026000600360009054906101000a900460ff1660ff1660ff168152602001908152602001600020600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000905550506001600360008282829054906101000a900460ff160192506101000a81548160ff021916908360ff160217905550565b600080600360009054906101000a900460ff1690505b600360019054906101000a900460ff1660ff168160ff1610156104cd57600260008260ff1660ff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104c2576001600360009054906101000a900460ff168203019150506104d3565b806001019050610418565b50600090505b90565b60015461050e4260026000600360009054906101000a900460ff1660ff1660ff1681526020019081526020016000206001015461054d565b111561051d5761051c610345565b5b565b6000600360009054906101000a900460ff1660ff16600360019054906101000a900460ff1660ff1610905090565b600082821115151561055b57fe5b81830390509291505056fea165627a7a72305820144c3ace3d4519b70dddb583d963ea680a2eb8bb90994fa8986069a75c746b9e0029",
+  "sourceMap": "312:1644:2:-;;;366:1;353:14;;;;;;;;;;;;;;;;;;;;594:94;8:9:-1;5:2;;;30:1;27;20:12;5:2;594:94:2;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;594:94:2;;;;;;;;;;;;;;;;649:10;637:9;:22;;;;671:1;663:5;;:9;;;;;;;;;;;;;;;;;;683:1;676:4;;:8;;;;;;;;;;;;;;;;;;594:94;312:1644;;;;;;",
+  "deployedSourceMap": "312:1644:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1030:81;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1030:81:2;;;;;;;;;;;;;;;;;;;;;;;;;;;743:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;743:93:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1865:89;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1865:89:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1865:89:2;;;;;;;;;;;;;;;;;;;;;;1707:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1707:93:2;;;;;;1178:187;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1178:187:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1455:131;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1455:131:2;;;;;;888:72;;8:9:-1;5:2;;;30:1;27;20:12;5:2;888:72:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1030:81;1070:7;1090:5;:12;1096:5;;;;;;;;;;;1090:12;;;;;;;;;;;;;;;:17;;;;;;;;;;;;1083:24;;1030:81;:::o;743:93::-;780:5;831:1;823:5;;;;;;;;;;;816:4;;;;;;;;;;;:12;:16;809:23;;743:93;:::o;1865:89::-;1915:1;1907:4;;:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1934:16;;;;;;;;;1940:4;1934:16;;;;;;1946:3;1934:16;;;1920:5;:11;1926:4;;;;;;;;;;;1920:11;;;;;;;;;;;;;;;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1865:89;:::o;1707:93::-;1754:4;;;;;;;;;;;1745:13;;:5;;;;;;;;;;;:13;;;;1737:22;;;;;;;;1770:5;:12;1776:5;;;;;;;;;;;1770:12;;;;;;;;;;;;;;;;1763:19;;;;;;;;;;;;;;;;;;;;;;;1795:1;1786:5;;:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1707:93::o;1178:187::-;1220:5;1235:7;1245:5;;;;;;;;;;;1235:15;;1231:99;1256:4;;;;;;;;;;;1252:8;;:1;:8;;;1231:99;;;1288:5;:8;1294:1;1288:8;;;;;;;;;;;;;;;:13;;;;;;;;;;;;1274:27;;:10;:27;;;1271:54;;;1323:1;1315:5;;;;;;;;;;;1311:1;:9;:13;1303:22;;;;;1271:54;1262:3;;;;;1231:99;;;;1340:1;1333:8;;1178:187;;:::o;1455:131::-;1554:9;;1510:41;1523:3;1528:5;:12;1534:5;;;;;;;;;;;1528:12;;;;;;;;;;;;;;;:22;;;1510:12;:41::i;:::-;:53;1507:76;;;1569:9;:7;:9::i;:::-;1507:76;1455:131::o;888:72::-;925:4;950:5;;;;;;;;;;;943:12;;:4;;;;;;;;;;;:12;;;935:21;;888:72;:::o;660:110:6:-;718:7;745:1;740;:6;;733:14;;;;;;764:1;760;:5;753:12;;660:110;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\n/**\n * @title Queue\n * @dev Data structure contract used in `Crowdsale.sol`\n * Allows buyers to line up on a first-in-first-out basis\n * See this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html\n */\n\nimport './utils/SafeMath.sol';\n\ncontract Queue {\n\t/* State variables */\n\tuint8 size = 5;\n\tuint256 timeLimit;\n\n\tstruct Buyer {\n\t\taddress addr;\n\t\tuint256 entryTime;\n\t}\n\n\tmapping(uint8 => Buyer) queue;\n\tuint8 first;\n\tuint8 last;\n\n\t/* Add events */\n\tevent TimeUp(address ejectedBuyerAddress);\n\n\t/* Add constructor */\n\tconstructor(uint256 _timeLimit) public {\n\t\ttimeLimit = _timeLimit;\n\t\tfirst = 1;\n\t\tlast = 0;\n\t}\n\n\t/* Returns the number of people waiting in line */\n\tfunction qsize() view public returns(uint8) {\n\t\t//TODO: Unsafe?\n\t\treturn last - first + 1;\n\t}\n\n\t/* Returns whether the queue is empty or not */\n\tfunction empty() view public returns(bool) {\n\t\treturn (last < first);\n\t}\n\n\t/* Returns the address of the person in the front of the queue */\n\tfunction getFirst() view public returns(address) {\n\t\treturn queue[first].addr;\n\t}\n\n\t/* Allows `msg.sender` to check their position in the queue */\n\tfunction checkPlace() view public returns(uint8) {\n\t\tfor(uint8 i = first; i < last; ++i){\n\t\t\tif(msg.sender == queue[i].addr) return (i - first + 1);\n\t\t}\n\t\treturn 0; // for not in queue\n\t}\n\n\t/* Allows anyone to expel the first person in line if their time\n\t * limit is up\n\t */\n\tfunction checkTime() public {\n\t\t// YOUR CODE HERE\n\t\tif(SafeMath.sub(now, queue[first].entryTime) > timeLimit){\n\t\t\tdequeue();\n\t\t}\n\t}\n\n\t/* Removes the first person in line; either when their time is up or when\n\t * they are done with their purchase\n\t */\n\tfunction dequeue() public {\n\t\trequire(first <= last);\n\t\tdelete queue[first];\n\t\tfirst += 1;\n\t}\n\n\t/* Places `addr` in the first empty position in the queue */\n\tfunction enqueue(address addr) public {\n\t\tlast += 1;\n\t\tqueue[last] = Buyer(addr, now);\n\t}\n}\n",
   "sourcePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol",
   "ast": {
     "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol",
     "exportedSymbols": {
       "Queue": [
-        105
+        332
       ]
     },
-    "id": 106,
+    "id": 333,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 63,
+        "id": 164,
         "literals": [
           "solidity",
           "^",
@@ -124,12 +169,12 @@
         "contractKind": "contract",
         "documentation": "@title Queue\n@dev Data structure contract used in `Crowdsale.sol`\nAllows buyers to line up on a first-in-first-out basis\nSee this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html",
         "fullyImplemented": true,
-        "id": 105,
+        "id": 165,
         "linearizedBaseContracts": [
           105
         ],
         "name": "Queue",
-        "nodeType": "ContractDefinition",
+        "nodeType": "ImportDirective",
         "nodes": [
           {
             "constant": false,
@@ -536,24 +581,2077 @@
             "visibility": "public"
           }
         ],
-        "scope": 106,
-        "src": "280:1123:2"
+        "scope": 333,
+        "src": "280:30:2",
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/utils/SafeMath.sol",
+        "file": "./utils/SafeMath.sol",
+        "sourceUnit": 571,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 332,
+        "linearizedBaseContracts": [
+          332
+        ],
+        "name": "Queue",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 168,
+            "name": "size",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "353:14:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 166,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "353:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "35",
+              "id": 167,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "366:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5_by_1",
+                "typeString": "int_const 5"
+              },
+              "value": "5"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 170,
+            "name": "timeLimit",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "370:17:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 169,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "370:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Queue.Buyer",
+            "id": 175,
+            "members": [
+              {
+                "constant": false,
+                "id": 172,
+                "name": "addr",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "408:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 171,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "408:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 174,
+                "name": "entryTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "424:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 173,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "424:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Buyer",
+            "nodeType": "StructDefinition",
+            "scope": 332,
+            "src": "391:54:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 179,
+            "name": "queue",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "448:29:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+              "typeString": "mapping(uint8 => struct Queue.Buyer)"
+            },
+            "typeName": {
+              "id": 178,
+              "keyType": {
+                "id": 176,
+                "name": "uint8",
+                "nodeType": "ElementaryTypeName",
+                "src": "456:5:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "448:23:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                "typeString": "mapping(uint8 => struct Queue.Buyer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 177,
+                "name": "Buyer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 175,
+                "src": "465:5:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Buyer_$175_storage_ptr",
+                  "typeString": "struct Queue.Buyer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 181,
+            "name": "first",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "480:11:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 180,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "480:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 183,
+            "name": "last",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "494:10:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 182,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "494:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 187,
+            "name": "TimeUp",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 185,
+                  "indexed": false,
+                  "name": "ejectedBuyerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "539:27:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 184,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "539:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "538:29:2"
+            },
+            "src": "526:42:2"
+          },
+          {
+            "body": {
+              "id": 204,
+              "nodeType": "Block",
+              "src": "633:55:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 194,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 192,
+                      "name": "timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 170,
+                      "src": "637:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 193,
+                      "name": "_timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 189,
+                      "src": "649:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "637:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 195,
+                  "nodeType": "ExpressionStatement",
+                  "src": "637:22:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 198,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 196,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "663:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 197,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "671:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "663:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 199,
+                  "nodeType": "ExpressionStatement",
+                  "src": "663:9:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 200,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "676:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 201,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "683:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "676:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "676:8:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 205,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "name": "_timeLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "606:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "606:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "605:20:2"
+            },
+            "returnParameters": {
+              "id": 191,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "633:0:2"
+            },
+            "scope": 332,
+            "src": "594:94:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 216,
+              "nodeType": "Block",
+              "src": "787:49:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      },
+                      "id": 212,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 210,
+                        "name": "last",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 183,
+                        "src": "816:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "-",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 211,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "823:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "src": "816:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "+",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 213,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "831:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "816:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 209,
+                  "id": 215,
+                  "nodeType": "Return",
+                  "src": "809:23:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 217,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "qsize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 206,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "757:2:2"
+            },
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "780:5:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "780:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "779:7:2"
+            },
+            "scope": 332,
+            "src": "743:93:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 227,
+              "nodeType": "Block",
+              "src": "931:29:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 222,
+                          "name": "last",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 183,
+                          "src": "943:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 223,
+                          "name": "first",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 181,
+                          "src": "950:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "src": "943:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 225,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "942:14:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 221,
+                  "id": 226,
+                  "nodeType": "Return",
+                  "src": "935:21:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 228,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "empty",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 218,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:2:2"
+            },
+            "returnParameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 220,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 228,
+                  "src": "925:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "925:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "924:6:2"
+            },
+            "scope": 332,
+            "src": "888:72:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 238,
+              "nodeType": "Block",
+              "src": "1079:32:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 233,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1090:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 235,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 234,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "1096:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1090:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "id": 236,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "addr",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 172,
+                    "src": "1090:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 232,
+                  "id": 237,
+                  "nodeType": "Return",
+                  "src": "1083:24:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 239,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFirst",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 229,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1047:2:2"
+            },
+            "returnParameters": {
+              "id": 232,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 231,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 239,
+                  "src": "1070:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 230,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1070:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1069:9:2"
+            },
+            "scope": 332,
+            "src": "1030:81:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 273,
+              "nodeType": "Block",
+              "src": "1227:138:2",
+              "statements": [
+                {
+                  "body": {
+                    "id": 269,
+                    "nodeType": "Block",
+                    "src": "1266:64:2",
+                    "statements": [
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 260,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 254,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 585,
+                              "src": "1274:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 255,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1274:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 256,
+                                "name": "queue",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 179,
+                                "src": "1288:5:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                                  "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                                }
+                              },
+                              "id": 258,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 257,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 245,
+                                "src": "1294:1:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1288:8:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                                "typeString": "struct Queue.Buyer storage ref"
+                              }
+                            },
+                            "id": 259,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "addr",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 172,
+                            "src": "1288:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1274:27:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 268,
+                        "nodeType": "IfStatement",
+                        "src": "1271:54:2",
+                        "trueBody": {
+                          "expression": {
+                            "argumentTypes": null,
+                            "components": [
+                              {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                },
+                                "id": 265,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint8",
+                                    "typeString": "uint8"
+                                  },
+                                  "id": 263,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "leftExpression": {
+                                    "argumentTypes": null,
+                                    "id": 261,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 245,
+                                    "src": "1311:1:2",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  },
+                                  "nodeType": "BinaryOperation",
+                                  "operator": "-",
+                                  "rightExpression": {
+                                    "argumentTypes": null,
+                                    "id": 262,
+                                    "name": "first",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 181,
+                                    "src": "1315:5:2",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  },
+                                  "src": "1311:9:2",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint8",
+                                    "typeString": "uint8"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "+",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "hexValue": "31",
+                                  "id": 264,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1323:1:2",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1_by_1",
+                                    "typeString": "int_const 1"
+                                  },
+                                  "value": "1"
+                                },
+                                "src": "1311:13:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              }
+                            ],
+                            "id": 266,
+                            "isConstant": false,
+                            "isInlineArray": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "TupleExpression",
+                            "src": "1310:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "functionReturnParameters": 243,
+                          "id": 267,
+                          "nodeType": "Return",
+                          "src": "1303:22:2"
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 250,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 248,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 245,
+                      "src": "1252:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "1256:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "src": "1252:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 270,
+                  "initializationExpression": {
+                    "assignments": [
+                      245
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 245,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 270,
+                        "src": "1235:7:2",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "typeName": {
+                          "id": 244,
+                          "name": "uint8",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1235:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 247,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "id": 246,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "1245:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1235:15:2"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 252,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": true,
+                      "src": "1262:3:2",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 251,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 245,
+                        "src": "1264:1:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 253,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1262:3:2"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1231:99:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 271,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1340:1:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "functionReturnParameters": 243,
+                  "id": 272,
+                  "nodeType": "Return",
+                  "src": "1333:8:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 274,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkPlace",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1197:2:2"
+            },
+            "returnParameters": {
+              "id": 243,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 242,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "1220:5:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 241,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1220:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1219:7:2"
+            },
+            "scope": 332,
+            "src": "1178:187:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 292,
+              "nodeType": "Block",
+              "src": "1483:103:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 286,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 279,
+                          "name": "now",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 587,
+                          "src": "1523:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 280,
+                              "name": "queue",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 179,
+                              "src": "1528:5:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                                "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                              }
+                            },
+                            "id": 282,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 281,
+                              "name": "first",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 181,
+                              "src": "1534:5:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1528:12:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                              "typeString": "struct Queue.Buyer storage ref"
+                            }
+                          },
+                          "id": 283,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "entryTime",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 174,
+                          "src": "1528:22:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 277,
+                          "name": "SafeMath",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 570,
+                          "src": "1510:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_SafeMath_$570_$",
+                            "typeString": "type(library SafeMath)"
+                          }
+                        },
+                        "id": 278,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sub",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 545,
+                        "src": "1510:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1510:41:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 285,
+                      "name": "timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 170,
+                      "src": "1554:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1510:53:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 291,
+                  "nodeType": "IfStatement",
+                  "src": "1507:76:2",
+                  "trueBody": {
+                    "id": 290,
+                    "nodeType": "Block",
+                    "src": "1564:19:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 287,
+                            "name": "dequeue",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 312,
+                            "src": "1569:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                              "typeString": "function ()"
+                            }
+                          },
+                          "id": 288,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1569:9:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 289,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1569:9:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 293,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1473:2:2"
+            },
+            "returnParameters": {
+              "id": 276,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1483:0:2"
+            },
+            "scope": 332,
+            "src": "1455:131:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 311,
+              "nodeType": "Block",
+              "src": "1733:67:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 299,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 297,
+                          "name": "first",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 181,
+                          "src": "1745:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 298,
+                          "name": "last",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 183,
+                          "src": "1754:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "src": "1745:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 296,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        588,
+                        589
+                      ],
+                      "referencedDeclaration": 588,
+                      "src": "1737:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 300,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1737:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 301,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1737:22:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 305,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1763:19:2",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 302,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1770:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 304,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 303,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "1776:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1770:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 306,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1763:19:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 309,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 307,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "1786:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 308,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1795:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1786:10:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 310,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1786:10:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 312,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dequeue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 294,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1723:2:2"
+            },
+            "returnParameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1733:0:2"
+            },
+            "scope": 332,
+            "src": "1707:93:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 330,
+              "nodeType": "Block",
+              "src": "1903:51:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 319,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 317,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "1907:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 318,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1915:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1907:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 320,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1907:9:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 328,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 321,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1920:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 323,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 322,
+                        "name": "last",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 183,
+                        "src": "1926:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1920:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 325,
+                          "name": "addr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 314,
+                          "src": "1940:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 326,
+                          "name": "now",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 587,
+                          "src": "1946:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 324,
+                        "name": "Buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 175,
+                        "src": "1934:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Buyer_$175_storage_ptr_$",
+                          "typeString": "type(struct Queue.Buyer storage pointer)"
+                        }
+                      },
+                      "id": 327,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1934:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_memory",
+                        "typeString": "struct Queue.Buyer memory"
+                      }
+                    },
+                    "src": "1920:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                      "typeString": "struct Queue.Buyer storage ref"
+                    }
+                  },
+                  "id": 329,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1920:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 331,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enqueue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 314,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "1882:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 313,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1882:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1881:14:2"
+            },
+            "returnParameters": {
+              "id": 316,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1903:0:2"
+            },
+            "scope": 332,
+            "src": "1865:89:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 333,
+        "src": "312:1644:2"
       }
     ],
-    "src": "0:1404:2"
+    "src": "0:1957:2"
   },
   "legacyAST": {
     "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/Queue.sol",
     "exportedSymbols": {
       "Queue": [
-        105
+        332
       ]
     },
-    "id": 106,
+    "id": 333,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 63,
+        "id": 164,
         "literals": [
           "solidity",
           "^",
@@ -569,12 +2667,12 @@
         "contractKind": "contract",
         "documentation": "@title Queue\n@dev Data structure contract used in `Crowdsale.sol`\nAllows buyers to line up on a first-in-first-out basis\nSee this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html",
         "fullyImplemented": true,
-        "id": 105,
+        "id": 165,
         "linearizedBaseContracts": [
           105
         ],
         "name": "Queue",
-        "nodeType": "ContractDefinition",
+        "nodeType": "ImportDirective",
         "nodes": [
           {
             "constant": false,
@@ -981,11 +3079,2064 @@
             "visibility": "public"
           }
         ],
-        "scope": 106,
-        "src": "280:1123:2"
+        "scope": 333,
+        "src": "280:30:2",
+        "absolutePath": "/Users/aashishrathi/Projects/BlockchainLearning/sp18-midterm-p1/contracts/utils/SafeMath.sol",
+        "file": "./utils/SafeMath.sol",
+        "sourceUnit": 571,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 332,
+        "linearizedBaseContracts": [
+          332
+        ],
+        "name": "Queue",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 168,
+            "name": "size",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "353:14:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 166,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "353:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "35",
+              "id": 167,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "366:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5_by_1",
+                "typeString": "int_const 5"
+              },
+              "value": "5"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 170,
+            "name": "timeLimit",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "370:17:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 169,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "370:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Queue.Buyer",
+            "id": 175,
+            "members": [
+              {
+                "constant": false,
+                "id": 172,
+                "name": "addr",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "408:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 171,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "408:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 174,
+                "name": "entryTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 175,
+                "src": "424:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 173,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "424:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Buyer",
+            "nodeType": "StructDefinition",
+            "scope": 332,
+            "src": "391:54:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 179,
+            "name": "queue",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "448:29:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+              "typeString": "mapping(uint8 => struct Queue.Buyer)"
+            },
+            "typeName": {
+              "id": 178,
+              "keyType": {
+                "id": 176,
+                "name": "uint8",
+                "nodeType": "ElementaryTypeName",
+                "src": "456:5:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "448:23:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                "typeString": "mapping(uint8 => struct Queue.Buyer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 177,
+                "name": "Buyer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 175,
+                "src": "465:5:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Buyer_$175_storage_ptr",
+                  "typeString": "struct Queue.Buyer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 181,
+            "name": "first",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "480:11:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 180,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "480:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 183,
+            "name": "last",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "494:10:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 182,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "494:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 187,
+            "name": "TimeUp",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 185,
+                  "indexed": false,
+                  "name": "ejectedBuyerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "539:27:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 184,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "539:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "538:29:2"
+            },
+            "src": "526:42:2"
+          },
+          {
+            "body": {
+              "id": 204,
+              "nodeType": "Block",
+              "src": "633:55:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 194,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 192,
+                      "name": "timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 170,
+                      "src": "637:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 193,
+                      "name": "_timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 189,
+                      "src": "649:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "637:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 195,
+                  "nodeType": "ExpressionStatement",
+                  "src": "637:22:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 198,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 196,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "663:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 197,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "671:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "663:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 199,
+                  "nodeType": "ExpressionStatement",
+                  "src": "663:9:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 200,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "676:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 201,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "683:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "676:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "676:8:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 205,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "name": "_timeLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "606:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "606:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "605:20:2"
+            },
+            "returnParameters": {
+              "id": 191,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "633:0:2"
+            },
+            "scope": 332,
+            "src": "594:94:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 216,
+              "nodeType": "Block",
+              "src": "787:49:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      },
+                      "id": 212,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 210,
+                        "name": "last",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 183,
+                        "src": "816:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "-",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 211,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "823:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "src": "816:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "+",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 213,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "831:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "816:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 209,
+                  "id": 215,
+                  "nodeType": "Return",
+                  "src": "809:23:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 217,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "qsize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 206,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "757:2:2"
+            },
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "780:5:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "780:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "779:7:2"
+            },
+            "scope": 332,
+            "src": "743:93:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 227,
+              "nodeType": "Block",
+              "src": "931:29:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 222,
+                          "name": "last",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 183,
+                          "src": "943:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 223,
+                          "name": "first",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 181,
+                          "src": "950:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "src": "943:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 225,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "942:14:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 221,
+                  "id": 226,
+                  "nodeType": "Return",
+                  "src": "935:21:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 228,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "empty",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 218,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:2:2"
+            },
+            "returnParameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 220,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 228,
+                  "src": "925:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "925:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "924:6:2"
+            },
+            "scope": 332,
+            "src": "888:72:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 238,
+              "nodeType": "Block",
+              "src": "1079:32:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 233,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1090:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 235,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 234,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "1096:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1090:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "id": 236,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "addr",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 172,
+                    "src": "1090:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 232,
+                  "id": 237,
+                  "nodeType": "Return",
+                  "src": "1083:24:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 239,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFirst",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 229,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1047:2:2"
+            },
+            "returnParameters": {
+              "id": 232,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 231,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 239,
+                  "src": "1070:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 230,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1070:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1069:9:2"
+            },
+            "scope": 332,
+            "src": "1030:81:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 273,
+              "nodeType": "Block",
+              "src": "1227:138:2",
+              "statements": [
+                {
+                  "body": {
+                    "id": 269,
+                    "nodeType": "Block",
+                    "src": "1266:64:2",
+                    "statements": [
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 260,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 254,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 585,
+                              "src": "1274:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 255,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1274:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 256,
+                                "name": "queue",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 179,
+                                "src": "1288:5:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                                  "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                                }
+                              },
+                              "id": 258,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 257,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 245,
+                                "src": "1294:1:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1288:8:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                                "typeString": "struct Queue.Buyer storage ref"
+                              }
+                            },
+                            "id": 259,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "addr",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 172,
+                            "src": "1288:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1274:27:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 268,
+                        "nodeType": "IfStatement",
+                        "src": "1271:54:2",
+                        "trueBody": {
+                          "expression": {
+                            "argumentTypes": null,
+                            "components": [
+                              {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                },
+                                "id": 265,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint8",
+                                    "typeString": "uint8"
+                                  },
+                                  "id": 263,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "leftExpression": {
+                                    "argumentTypes": null,
+                                    "id": 261,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 245,
+                                    "src": "1311:1:2",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  },
+                                  "nodeType": "BinaryOperation",
+                                  "operator": "-",
+                                  "rightExpression": {
+                                    "argumentTypes": null,
+                                    "id": 262,
+                                    "name": "first",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 181,
+                                    "src": "1315:5:2",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  },
+                                  "src": "1311:9:2",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint8",
+                                    "typeString": "uint8"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "+",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "hexValue": "31",
+                                  "id": 264,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1323:1:2",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1_by_1",
+                                    "typeString": "int_const 1"
+                                  },
+                                  "value": "1"
+                                },
+                                "src": "1311:13:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              }
+                            ],
+                            "id": 266,
+                            "isConstant": false,
+                            "isInlineArray": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "TupleExpression",
+                            "src": "1310:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "functionReturnParameters": 243,
+                          "id": 267,
+                          "nodeType": "Return",
+                          "src": "1303:22:2"
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 250,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 248,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 245,
+                      "src": "1252:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "1256:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "src": "1252:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 270,
+                  "initializationExpression": {
+                    "assignments": [
+                      245
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 245,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 270,
+                        "src": "1235:7:2",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "typeName": {
+                          "id": 244,
+                          "name": "uint8",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1235:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 247,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "id": 246,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "1245:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1235:15:2"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 252,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": true,
+                      "src": "1262:3:2",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 251,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 245,
+                        "src": "1264:1:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 253,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1262:3:2"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1231:99:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 271,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1340:1:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "functionReturnParameters": 243,
+                  "id": 272,
+                  "nodeType": "Return",
+                  "src": "1333:8:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 274,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkPlace",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1197:2:2"
+            },
+            "returnParameters": {
+              "id": 243,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 242,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "1220:5:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 241,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1220:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1219:7:2"
+            },
+            "scope": 332,
+            "src": "1178:187:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 292,
+              "nodeType": "Block",
+              "src": "1483:103:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 286,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 279,
+                          "name": "now",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 587,
+                          "src": "1523:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 280,
+                              "name": "queue",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 179,
+                              "src": "1528:5:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                                "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                              }
+                            },
+                            "id": 282,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 281,
+                              "name": "first",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 181,
+                              "src": "1534:5:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1528:12:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                              "typeString": "struct Queue.Buyer storage ref"
+                            }
+                          },
+                          "id": 283,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "entryTime",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 174,
+                          "src": "1528:22:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 277,
+                          "name": "SafeMath",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 570,
+                          "src": "1510:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_SafeMath_$570_$",
+                            "typeString": "type(library SafeMath)"
+                          }
+                        },
+                        "id": 278,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sub",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 545,
+                        "src": "1510:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1510:41:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 285,
+                      "name": "timeLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 170,
+                      "src": "1554:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1510:53:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 291,
+                  "nodeType": "IfStatement",
+                  "src": "1507:76:2",
+                  "trueBody": {
+                    "id": 290,
+                    "nodeType": "Block",
+                    "src": "1564:19:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 287,
+                            "name": "dequeue",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 312,
+                            "src": "1569:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                              "typeString": "function ()"
+                            }
+                          },
+                          "id": 288,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1569:9:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 289,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1569:9:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 293,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1473:2:2"
+            },
+            "returnParameters": {
+              "id": 276,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1483:0:2"
+            },
+            "scope": 332,
+            "src": "1455:131:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 311,
+              "nodeType": "Block",
+              "src": "1733:67:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 299,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 297,
+                          "name": "first",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 181,
+                          "src": "1745:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 298,
+                          "name": "last",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 183,
+                          "src": "1754:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "src": "1745:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 296,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        588,
+                        589
+                      ],
+                      "referencedDeclaration": 588,
+                      "src": "1737:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 300,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1737:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 301,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1737:22:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 305,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1763:19:2",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 302,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1770:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 304,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 303,
+                        "name": "first",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "1776:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1770:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 306,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1763:19:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 309,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 307,
+                      "name": "first",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 181,
+                      "src": "1786:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 308,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1795:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1786:10:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 310,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1786:10:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 312,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dequeue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 294,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1723:2:2"
+            },
+            "returnParameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1733:0:2"
+            },
+            "scope": 332,
+            "src": "1707:93:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 330,
+              "nodeType": "Block",
+              "src": "1903:51:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 319,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 317,
+                      "name": "last",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 183,
+                      "src": "1907:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 318,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1915:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "1907:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "id": 320,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1907:9:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 328,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 321,
+                        "name": "queue",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 179,
+                        "src": "1920:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_Buyer_$175_storage_$",
+                          "typeString": "mapping(uint8 => struct Queue.Buyer storage ref)"
+                        }
+                      },
+                      "id": 323,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 322,
+                        "name": "last",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 183,
+                        "src": "1926:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1920:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                        "typeString": "struct Queue.Buyer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 325,
+                          "name": "addr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 314,
+                          "src": "1940:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 326,
+                          "name": "now",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 587,
+                          "src": "1946:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 324,
+                        "name": "Buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 175,
+                        "src": "1934:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Buyer_$175_storage_ptr_$",
+                          "typeString": "type(struct Queue.Buyer storage pointer)"
+                        }
+                      },
+                      "id": 327,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1934:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Buyer_$175_memory",
+                        "typeString": "struct Queue.Buyer memory"
+                      }
+                    },
+                    "src": "1920:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Buyer_$175_storage",
+                      "typeString": "struct Queue.Buyer storage ref"
+                    }
+                  },
+                  "id": 329,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1920:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 331,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enqueue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 314,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "1882:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 313,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1882:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1881:14:2"
+            },
+            "returnParameters": {
+              "id": 316,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1903:0:2"
+            },
+            "scope": 332,
+            "src": "1865:89:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 333,
+        "src": "312:1644:2"
       }
     ],
-    "src": "0:1404:2"
+    "src": "0:1957:2"
   },
   "compiler": {
     "name": "solc",
@@ -993,7 +5144,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-07-09T13:13:08.650Z",
+  "updatedAt": "2019-07-09T16:01:26.429Z",
   "devdoc": {
     "details": "Data structure contract used in `Crowdsale.sol` Allows buyers to line up on a first-in-first-out basis See this example: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaQueueinPython.html",
     "methods": {},
